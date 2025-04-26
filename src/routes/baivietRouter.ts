@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import { container } from 'tsyringe';
+import { BaiVietController } from '../controllers/baivietController';
+import { UploadMultiService } from '../services/upload-multiService';
+const baivietRouter = Router();
+const uploadMultiService = container.resolve(UploadMultiService);
+const baivietController = container.resolve(BaiVietController);
+baivietRouter.get('/get-all', baivietController.getBaiVietAll.bind(baivietController));
+baivietRouter.post('/thembaiviet',uploadMultiService.multerMultiUpload,baivietController.createBaiViet.bind(baivietController));
+baivietRouter.put('/suabaiviet',uploadMultiService.multerMultiUpload,baivietController.updateBaiViet.bind(baivietController));
+baivietRouter.delete('/xoabaiviet/:id',baivietController.deleteBaiViet.bind(baivietController));
+baivietRouter.get('/getbaivietbyID/:id',baivietController.getBaiVietByID.bind(baivietController));
+baivietRouter.get('/getbaivietCM/:loai_bai_viet/:pageIndex/:pageSize',baivietController.getBaiVietCM.bind(baivietController));
+export default baivietRouter;
