@@ -1,0 +1,13 @@
+import { Router } from "express";
+import { container } from "tsyringe";
+import { TrangThietBiController } from "../controllers/thietbiController";
+import { UploadMultiService } from "../services/upload-multiService";
+const trangThietBiRouter = Router();
+const trangThietBiController = container.resolve(TrangThietBiController);
+const uploadMultiService = container.resolve(UploadMultiService);
+trangThietBiRouter.get('/getall',trangThietBiController.getTrangThietBiAll.bind(trangThietBiController));
+trangThietBiRouter.post('/themtrangthietbi',uploadMultiService.multerMultiUpload,trangThietBiController.createTrangThietBi.bind(trangThietBiController));
+trangThietBiRouter.put('/suatrangthietbi',uploadMultiService.multerMultiUpload,trangThietBiController.updateTrangThietBi.bind(trangThietBiController));
+trangThietBiRouter.delete('/xoatrangthietbi/:id',trangThietBiController.deleteTrangThietBi.bind(trangThietBiController));
+trangThietBiRouter.get('/getTrangThietBi/:id',trangThietBiController.getTrangThietBiByID.bind(trangThietBiController));
+export default trangThietBiRouter;  
