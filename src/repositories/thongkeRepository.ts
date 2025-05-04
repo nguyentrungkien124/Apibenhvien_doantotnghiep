@@ -13,6 +13,15 @@ import { Database } from "../config/database";
             throw new Error(error.messge);
         }
     }
+    async ThongKeTrangThietBi():Promise<any>{
+        try{
+            const sql = 'CALL ThongKeTrangThietBi()';
+            const [results] = await this.db.query(sql,[]);
+            return results;
+        }catch(error:any){
+            throw new Error(error.message);
+        }
+    }
 
 }
 

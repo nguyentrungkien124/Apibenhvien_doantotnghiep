@@ -7,5 +7,6 @@ const thongkeController = container.resolve(ThongkeController);
 
 thongkeRouter.get('/GetTop10Doctors',thongkeController.GetTop10Doctors.bind(thongkeController));
 
+thongkeRouter.get('/ThongKeTrangThietBi',thongkeController.ThongKeTrangThietBi.bind(thongkeController));
 
 export default thongkeRouter;   

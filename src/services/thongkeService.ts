@@ -7,5 +7,7 @@ export class ThongkeService{
     async GetTop10Doctors():Promise<any>{
         return this.thongkeRepository.GetTop10Doctors();
     }
-  
+    async ThongKeTrangThietBi():Promise<any>{
+        return this.thongkeRepository.ThongKeTrangThietBi();
+    }
 }
