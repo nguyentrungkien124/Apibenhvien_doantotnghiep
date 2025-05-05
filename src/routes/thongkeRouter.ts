@@ -11,4 +11,5 @@ thongkeRouter.get('/ThongKeTrangThietBi',thongkeController.ThongKeTrangThietBi.b
 
 thongkeRouter.get('/ThongKeTongSoBacSi',thongkeController.ThongKeTongSoBacSi.bind(thongkeController));
 
+thongkeRouter.get('/ThongKeTongLichHen',thongkeController.ThongKeTongLichHen.bind(thongkeController));
 export default thongkeRouter;   
