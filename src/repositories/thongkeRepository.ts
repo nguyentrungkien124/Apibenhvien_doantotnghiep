@@ -22,6 +22,15 @@ import { Database } from "../config/database";
             throw new Error(error.message);
         }
     }
+    async ThongKeTongSoBacSi():Promise<any>{
+        try{
+            const sql = 'CALL ThongKeTongSoBacSi()';
+            const [results] = await this.db.query(sql,[]);
+            return results;
+        }catch(error:any){
+            throw new Error(error.message);
+        }
+    }
 
 }
 

@@ -28,5 +28,17 @@ export class ThongkeController{
             res.json({message:error.message});
         }
     }
+    async ThongKeTongSoBacSi(req:Request,res:Response):Promise<void>{
+        try{
+            const data = await this.thongkeService.ThongKeTongSoBacSi();
+            if(data && data.length>0){
+                res.json(data);
+            }else{
+                res.json({message:'không tìm thấy dữ liệu'});
+            }
+        }catch(error:any){
+            res.json({message:error.message});
+        }
+    }
   
 }

@@ -9,4 +9,6 @@ thongkeRouter.get('/GetTop10Doctors',thongkeController.GetTop10Doctors.bind(thon
 
 thongkeRouter.get('/ThongKeTrangThietBi',thongkeController.ThongKeTrangThietBi.bind(thongkeController));
 
+thongkeRouter.get('/ThongKeTongSoBacSi',thongkeController.ThongKeTongSoBacSi.bind(thongkeController));
+
 export default thongkeRouter;   

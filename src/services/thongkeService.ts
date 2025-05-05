@@ -10,4 +10,7 @@ export class ThongkeService{
     async ThongKeTrangThietBi():Promise<any>{
         return this.thongkeRepository.ThongKeTrangThietBi();
     }
+    async ThongKeTongSoBacSi():Promise<any>{
+        return this.thongkeRepository.ThongKeTongSoBacSi();
+    }
 }
