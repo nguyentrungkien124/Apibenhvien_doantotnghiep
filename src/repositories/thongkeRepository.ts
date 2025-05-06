@@ -49,7 +49,15 @@ import { Database } from "../config/database";
             throw new Error(error.message);
         }
     }
-    
+    async ThongKeSoLuongLichHenCuaTatCaBacSi():Promise<any>{
+        try{
+            const sql = 'CALL ThongKeSoLuongLichHenCuaTatCaBacSi()';
+            const [results] = await this.db.query(sql,[]);
+            return results;
+        }catch(error:any){
+            throw new Error(error.message);
+        }
+    }
 
 }
 
