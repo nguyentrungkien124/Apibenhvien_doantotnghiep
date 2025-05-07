@@ -58,6 +58,16 @@ import { Database } from "../config/database";
             throw new Error(error.message);
         }
     }
+    async ThongKeDoanhThuTheoKhoangThoiGian(thongke: { NgayBatDau: string, NgayKetThuc: string }):Promise<any>{
+        try{
+            
+            const sql = 'CALL ThongKeDoanhThuTheoKhoangThoiGian(?,?)';
+            const [results] = await this.db.query(sql,[thongke.NgayBatDau,thongke.NgayKetThuc]);
+            return results;
+        }catch(error:any){
+            throw new Error(error.message);
+        }
+    }
 
 }
 

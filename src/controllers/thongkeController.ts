@@ -76,5 +76,27 @@ export class ThongkeController{
             res.json({message:error.message});
         }
     }
+    async ThongKeDoanhThuTheoKhoangThoiGian(req:Request,res:Response):Promise<void>{
+        try{
+            const { NgayBatDau, NgayKetThuc } = req.body as { NgayBatDau: string, NgayKetThuc: string};
+
+            // Validate that both dates are provided
+            if (!NgayBatDau || !NgayKetThuc ) {
+                res.status(400).json({ message: "Vui lòng cung cấp cả Ngày Bắt Đầu và Ngày Kết Thúc." });
+                return;
+            }
+
+            // Pass the dates as a single object
+            const data = await this.thongkeService.ThongKeDoanhThuTheoKhoangThoiGian({ NgayBatDau, NgayKetThuc });
+
+            if (data && data.length > 0) {
+                res.json(data);
+            } else {
+                res.json({ message: 'không tìm thấy dữ liệu' });
+            }
+        } catch (error: any) {
+            res.status(500).json({ message: error.message });
+        }
+    }
   
 }

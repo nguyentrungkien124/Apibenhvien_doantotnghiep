@@ -22,4 +22,7 @@ export class ThongkeService{
     async ThongKeSoLuongLichHenCuaTatCaBacSi():Promise<any>{
         return this.thongkeRepository.ThongKeSoLuongLichHenCuaTatCaBacSi();
     }
+    async ThongKeDoanhThuTheoKhoangThoiGian(thongke: { NgayBatDau: string, NgayKetThuc: string }):Promise<any>{
+        return this.thongkeRepository.ThongKeDoanhThuTheoKhoangThoiGian(thongke);
+    }
 }

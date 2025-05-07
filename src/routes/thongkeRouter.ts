@@ -14,4 +14,5 @@ thongkeRouter.get('/ThongKeTongSoBacSi',thongkeController.ThongKeTongSoBacSi.bin
 thongkeRouter.get('/ThongKeTongLichHen',thongkeController.ThongKeTongLichHen.bind(thongkeController));
 thongkeRouter.get('/ThongKeTongKhachHang',thongkeController.ThongKeTongKhachHang.bind(thongkeController));
 thongkeRouter.get('/ThongKeSoLuongLichHenCuaTatCaBacSi',thongkeController.ThongKeSoLuongLichHenCuaTatCaBacSi.bind(thongkeController));
+thongkeRouter.post('/ThongKeDoanhThuTheoKhoangThoiGian',thongkeController.ThongKeDoanhThuTheoKhoangThoiGian.bind(thongkeController));
 export default thongkeRouter;   
