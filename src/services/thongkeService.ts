@@ -25,4 +25,7 @@ export class ThongkeService{
     async ThongKeDoanhThuTheoKhoangThoiGian(thongke: { NgayBatDau: string, NgayKetThuc: string }):Promise<any>{
         return this.thongkeRepository.ThongKeDoanhThuTheoKhoangThoiGian(thongke);
     }
+    async ThongKeLichKhamTheoBacSi(thongke: { start_date: string, end_date: string,bac_si_id:string }):Promise<any>{
+        return this.thongkeRepository.ThongKeLichKhamTheoBacSi(thongke)
+    }
 }
